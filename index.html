@@ -93,45 +93,118 @@
   <div class="container">
     <header>
       <h1>Privacy Policy</h1>
-      <p class="subtitle">Listenly &mdash; Last updated: April 2026</p>
+      <p class="subtitle">Listenly — Last updated: May 4, 2026</p>
     </header>
 
     <p>
-      Listenly is a couples emotional check-in app. This policy explains what data we collect, how we use it, and your rights.
+      Listenly is a couples emotional check-in app. This policy explains what data we collect, how we collect it, how we use it, who we share it with, and your rights.
     </p>
 
-    <h2>What we collect</h2>
+    <h2>What data we collect and how</h2>
+
+    <p>We collect the following data, all of which you provide directly through the app:</p>
+
     <ul>
-      <li>Your email address and account credentials</li>
-      <li>Your display name</li>
-      <li>Mood check-ins you submit</li>
-      <li>Reactions and acknowledgments between you and your partner</li>
-      <li>Notification preferences and timezone</li>
+      <li><strong>Account information</strong> — your email address and password (the password is hashed; we never see it in plain text). Collected when you create an account.</li>
+      <li><strong>Profile information</strong> — your display name and timezone. Collected when you set up your profile.</li>
+      <li><strong>Check-ins</strong> — the mood label you select and any optional free-text note you write. Collected when you submit a check-in.</li>
+      <li><strong>Reactions and acknowledgments</strong> — emoji and optional text you send in response to your partner's check-ins. Collected when you react.</li>
+      <li><strong>Preferences</strong> — notification settings and quiet hours. Collected when you adjust settings.</li>
+      <li><strong>AI consent state</strong> — whether you have opted in to AI-powered suggestions. Collected on the AI consent screen during onboarding and revocable in Settings.</li>
     </ul>
 
-    <h2>How we use it</h2>
+    <p>We do not collect data automatically in the background. We do not collect device identifiers, location, contacts, photos, or analytics.</p>
+
+    <h2>How we use your data</h2>
+
+    <p>We use your data only for the following purposes:</p>
+
     <ul>
-      <li>To deliver your check-ins and reactions to your partner</li>
-      <li>To generate AI-powered connection suggestions. Check-in content is sent to Anthropic&rsquo;s Claude API to generate these suggestions. By using the suggestion feature, you consent to this. You can decline consent during onboarding.</li>
-      <li>To send push notifications</li>
-      <li>To authenticate your account. If you sign in with Apple or Google, your authentication is processed by that provider.</li>
+      <li><strong>To deliver your check-ins and reactions to your linked partner.</strong></li>
+      <li><strong>To generate AI-powered connection suggestions</strong> (only if both partners have opted in — see "Third-party AI processing — Anthropic" below).</li>
+      <li><strong>To send push notifications</strong> when your partner checks in or reacts.</li>
+      <li><strong>To authenticate your account.</strong> If you sign in with Apple or Google, authentication is handled by that provider and we receive only the identifier needed to create your account.</li>
     </ul>
 
-    <h2>What we don&rsquo;t do</h2>
+    <p>We do not use your data for advertising, profiling, or any purpose other than those listed above.</p>
+
+    <h2>Third-party AI processing — Anthropic</h2>
+
+    <p>If both partners opt in to AI-powered suggestions, certain check-in data is sent to <strong>Anthropic, PBC</strong> (the company that provides the Claude AI service) for the sole purpose of generating supportive suggestions for the receiving partner. This is the only third-party AI service we use.</p>
+
+    <p><strong>What data is sent to Anthropic:</strong></p>
+
     <ul>
-      <li>We don&rsquo;t sell your data</li>
-      <li>We don&rsquo;t use your data for advertising</li>
-      <li>We don&rsquo;t share your data with anyone except Anthropic (for AI suggestions), Apple (for push notifications and, if chosen, authentication), and Google (if chosen, for authentication)</li>
+      <li>The mood label of the check-in (for example, "grateful," "overwhelmed")</li>
+      <li>A short descriptor of the mood and its category (for example, "calm and content," "purple zone")</li>
+      <li>The optional free-text note attached to the check-in, if any</li>
+      <li>The display name of the partner who submitted the check-in (so the suggestion can refer to them by name)</li>
+      <li>A short prompt template that frames the request</li>
     </ul>
 
-    <h2>Data storage</h2>
-    <p>Your data is stored securely via Supabase (us-east-1).</p>
+    <p>We do <strong>not</strong> send your email address, your account ID, your partner's account ID, your location, your timezone, your check-in history, or any other identifying information to Anthropic. The receiving partner's name is not sent. Each request is stateless — Anthropic does not know it is part of an ongoing relationship between two specific users.</p>
+
+    <p><strong>Your consent is required from both partners.</strong> When you first reach the AI suggestions feature, you are presented with a consent screen that names Anthropic and explains what is sent. The feature is gated on this consent for both partners — your check-in is sent to Anthropic only if both you (the sender) and your partner (the receiver) have opted in. If either of you declines, no data is sent. You can revoke consent at any time from Settings, after which no further data will be sent on your behalf and you will no longer see AI suggestions for your partner's check-ins.</p>
+
+    <p><strong>How Anthropic protects your data.</strong> Anthropic operates under commercial API terms that, as of the date of this policy, provide that customer data submitted via the API is not used to train Anthropic's models and is retained only for a limited period for abuse monitoring before deletion. Anthropic provides protections substantially equivalent to those described in this policy. You can review Anthropic's commitments at:</p>
+
+    <ul>
+      <li>Anthropic's Privacy Policy: <a href="https://www.anthropic.com/legal/privacy">https://www.anthropic.com/legal/privacy</a></li>
+      <li>Anthropic's Commercial Terms of Service: <a href="https://www.anthropic.com/legal/commercial-terms">https://www.anthropic.com/legal/commercial-terms</a></li>
+    </ul>
+
+    <p><strong>How we use AI-generated suggestions.</strong> When you receive an AI-generated suggestion, we store it in your account so you can see your suggestion history and so the feature can avoid repeating the same suggestion to you. Over time, we review suggestions that have performed well and may add the suggestion text — the wording produced by Anthropic, with no user data attached — to a shared library that other users may see when they receive a check-in with a similar mood. The original check-in note, the sender's name, and any other identifying information are never included in this library. The library contains only the AI-generated suggestion wording, the mood it was generated for, and usage statistics.</p>
+
+    <h2>Other third parties</h2>
+
+    <ul>
+      <li><strong>Apple</strong> — receives the data necessary to deliver push notifications (an opaque device token and the notification payload). If you sign in with Apple, Apple handles your authentication.</li>
+      <li><strong>Google</strong> — if you sign in with Google, Google handles your authentication. We do not share any other data with Google.</li>
+      <li><strong>Supabase</strong> — our backend infrastructure provider. Your account, check-ins, and reactions are stored in a Supabase database (region: us-east-1, United States). Supabase acts as a processor on our behalf and does not use your data for any other purpose.</li>
+    </ul>
+
+    <h2>What we don't do</h2>
+
+    <ul>
+      <li>We do not sell your data.</li>
+      <li>We do not use your data for advertising.</li>
+      <li>We do not share your data with any party other than those named above.</li>
+      <li>We do not allow third parties to use your data for their own purposes.</li>
+    </ul>
+
+    <h2>Data storage and retention</h2>
+
+    <p>Your data is stored securely via Supabase in the United States. We retain your data for as long as your account is active. Check-in history is retained until you delete it or your account.</p>
 
     <h2>Account deletion</h2>
-    <p>You can delete your account and all associated data from within the app under Settings. Deletion is permanent.</p>
+
+    <p>You can permanently delete your account and all associated data from within the app at <strong>Settings → Privacy → Delete my account</strong>. Deletion removes your account, profile, check-ins, reactions, partner link, and AI consent record. Deletion is permanent and cannot be undone.</p>
+
+    <h2>Your rights</h2>
+
+    <p>You can:</p>
+
+    <ul>
+      <li>Pause sharing with your partner at any time (Settings → Privacy)</li>
+      <li>Unlink from your partner (Settings → Privacy)</li>
+      <li>Delete your check-in history (Settings → Privacy)</li>
+      <li>Revoke AI consent (Settings → Privacy) — this stops your check-ins from being sent to Anthropic and stops you from seeing AI-generated suggestions for your partner's check-ins.</li>
+      <li>Delete your account (Settings → Privacy)</li>
+    </ul>
+
+    <p>If you have questions or want to exercise any other right under applicable privacy law, contact us at the address below.</p>
+
+    <h2>Children</h2>
+
+    <p>Listenly is not directed to children under 13 and we do not knowingly collect data from children under 13. If you believe a child has provided us data, contact us and we will delete it.</p>
+
+    <h2>Changes to this policy</h2>
+
+    <p>If we make material changes to this policy, we will update the "Last updated" date at the top and notify users in the app before the changes take effect.</p>
 
     <h2>Contact</h2>
-    <p>Questions? Email us at <a href="mailto:listenlyapp@gmail.com">listenlyapp@gmail.com</a>.</p>
+
+    <p>Questions about this policy or your data: <strong><a href="mailto:listenlyapp@gmail.com">listenlyapp@gmail.com</a></strong></p>
   </div>
 </body>
 </html>
