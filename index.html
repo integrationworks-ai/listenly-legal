@@ -93,7 +93,7 @@
   <div class="container">
     <header>
       <h1>Privacy Policy</h1>
-      <p class="subtitle">Listenly — Last updated: May 4, 2026</p>
+      <p class="subtitle">Listenly — Last updated: May 26, 2026</p>
     </header>
 
     <p>
@@ -158,8 +158,9 @@
     <h2>Other third parties</h2>
 
     <ul>
-      <li><strong>Apple</strong> — receives the data necessary to deliver push notifications (an opaque device token and the notification payload). If you sign in with Apple, Apple handles your authentication.</li>
-      <li><strong>Google</strong> — if you sign in with Google, Google handles your authentication. We do not share any other data with Google.</li>
+      <li><strong>Apple</strong> — push notifications are delivered to your device through Apple's Push Notification service (APNs), which receives an opaque device token and the notification payload. If you sign in with Apple, Apple handles your authentication.</li>
+      <li><strong>Firebase Cloud Messaging (Google)</strong> — we use Firebase Cloud Messaging, a Google service, to send push notifications. It receives an opaque device token and the notification payload and routes the notification to Apple's Push Notification service for delivery to your device. It is used only to deliver these notifications and for no other purpose.</li>
+      <li><strong>Google</strong> — if you sign in with Google, Google handles your authentication. Google also operates Firebase Cloud Messaging (above), which we use to deliver push notifications. We do not share your data with Google for any other purpose.</li>
       <li><strong>Supabase</strong> — our backend infrastructure provider. Your account, check-ins, and reactions are stored in a Supabase database (region: us-east-1, United States). Supabase acts as a processor on our behalf and does not use your data for any other purpose.</li>
     </ul>
 
