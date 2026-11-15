@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Join on Listenly</title>
+  <style>
+    :root {
+      --bg: #1a1a1a;
+      --text: #f5efe6;
+      --muted: #a49d8f;
+      --card: #262626;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 72px 24px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 12px;
+    }
+    p { margin: 0 0 16px; color: var(--muted); }
+    .code {
+      display: inline-block;
+      margin: 8px 0 20px;
+      padding: 14px 24px;
+      background: var(--card);
+      border-radius: 14px;
+      color: var(--text);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      padding-left: calc(24px + 0.18em);
+    }
+    .button {
+      display: block;
+      width: 100%;
+      margin: 0 0 12px;
+      padding: 16px;
+      border: 0;
+      border-radius: 12px;
+      font: inherit;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .primary { background: var(--text); color: var(--bg); }
+    .secondary { background: transparent; color: var(--text); border: 1px solid var(--muted); }
+    [hidden] { display: none; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section id="join" hidden>
+      <h1>You&rsquo;re invited to Listenly</h1>
+      <p>Listenly is available on iPhone.</p>
+      <div class="code" id="code" aria-label="Your invite code"></div>
+      <a class="button primary" href="https://apps.apple.com/app/listenly-couples-check-in/id6762579212">Get Listenly on the App Store</a>
+      <button class="button secondary" id="copy" type="button">Copy code</button>
+      <p id="hint">After you install, open Listenly, tap &ldquo;I have a code&rdquo; and paste it.</p>
+    </section>
+    <section id="other" hidden>
+      <h1>Page not found</h1>
+      <p>If you were sent a Listenly invite, ask your partner to send you a new one.</p>
+    </section>
+  </main>
+  <script>
+    (function () {
+      // The invite link is https://listenly.integrationworks.org/join/<CODE>.
+      // GitHub Pages serves this file for every unknown path, so the code is
+      // read from the address. It is only ever shown as text and copied; it is
+      // never sent anywhere, and the page loads nothing from other sites.
+      var match = /^\/join\/([A-Za-z0-9]{6})\/?$/.exec(window.location.pathname);
+      if (!match) {
+        document.getElementById('other').hidden = false;
+        return;
+      }
+      var code = match[1].toUpperCase();
+      document.getElementById('code').textContent = code;
+      document.getElementById('join').hidden = false;
+      var button = document.getElementById('copy');
+      var failed = function () { button.textContent = 'Select the code above to copy it'; };
+      var done = function () { button.textContent = 'Copied'; };
+      // Older fallback: select the code text and use the legacy copy command.
+      var legacy = function () {
+        try {
+          var range = document.createRange();
+          range.selectNodeContents(document.getElementById('code'));
+          var sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+          if (document.execCommand('copy')) { done(); } else { failed(); }
+        } catch (e) { failed(); }
+      };
+      button.addEventListener('click', function () {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(code).then(done, legacy);
+        } else {
+          legacy();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
