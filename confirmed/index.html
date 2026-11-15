@@ -43,8 +43,20 @@
 </head>
 <body>
   <main class="container">
-    <h1>Your email is confirmed</h1>
-    <p>Open the Listenly app and log in.</p>
+    <h1 id="title">Your email is confirmed</h1>
+    <p id="next">Open the Listenly app and log in.</p>
   </main>
+  <script>
+    // Spanish when the browser's first language is Spanish. The address stays
+    // the same, so the app's confirmation link needs no second redirect URL.
+    (function () {
+      var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+      if (!/^es\b/i.test(lang)) return;
+      document.documentElement.lang = 'es';
+      document.title = 'Correo confirmado — Listenly';
+      document.getElementById('title').textContent = 'Tu correo está confirmado';
+      document.getElementById('next').textContent = 'Abre la app Listenly e inicia sesión.';
+    })();
+  </script>
 </body>
 </html>
