@@ -106,7 +106,7 @@
     <p>Recopilamos los siguientes datos. Todos nos los das tú directamente a través de la app:</p>
 
     <ul>
-      <li><strong>Información de la cuenta</strong> — tu correo electrónico y tu contraseña (la contraseña se guarda cifrada con hash; nunca la vemos en texto plano). Se recopila cuando creas una cuenta.</li>
+      <li><strong>Información de la cuenta</strong> — tu correo electrónico y tu contraseña (la contraseña se guarda como un hash; nunca la vemos en texto plano). Se recopila cuando creas una cuenta.</li>
       <li><strong>Información del perfil</strong> — tu nombre visible y tu zona horaria. Se recopila cuando configuras tu perfil.</li>
       <li><strong>Check-ins</strong> — el estado de ánimo que eliges y la nota de texto opcional que escribas. Se recopila cuando envías un check-in.</li>
       <li><strong>Reacciones y respuestas</strong> — los emojis y el texto opcional que envías en respuesta a los check-ins de tu pareja. Se recopila cuando reaccionas.</li>
@@ -125,7 +125,7 @@
 
     <ul>
       <li><strong>Entregar tus check-ins y reacciones a tu pareja vinculada.</strong></li>
-      <li><strong>Generar sugerencias de conexión con IA</strong> (solo si ambos miembros de la pareja lo aceptaron; consulta «Procesamiento de IA por terceros — Anthropic» más abajo).</li>
+      <li><strong>Generar sugerencias de conexión con IA</strong> (solo si las dos personas de la pareja lo aceptaron; consulta «Procesamiento de IA por terceros — Anthropic» más abajo).</li>
       <li><strong>Escribir reflexiones semanales</strong> para Listenly Plus (solo si aceptaste la IA; consulta «Reflexiones semanales» dentro de «Procesamiento de IA por terceros — Anthropic» más abajo).</li>
       <li><strong>Enviar notificaciones push</strong> cuando tu pareja hace un check-in o reacciona.</li>
       <li><strong>Autenticar tu cuenta.</strong> Si inicias sesión con Apple o Google, ese proveedor se encarga de la autenticación y nosotros solo recibimos el identificador necesario para crear tu cuenta.</li>
@@ -135,12 +135,12 @@
 
     <h2>Procesamiento de IA por terceros — Anthropic</h2>
 
-    <p>Si ambos miembros de la pareja aceptan las sugerencias con IA, ciertos datos del check-in se envían a <strong>Anthropic, PBC</strong> (la empresa que ofrece el servicio de IA Claude) con el único fin de generar sugerencias de apoyo para quien recibe el check-in y, en Listenly Plus, las reflexiones semanales que se describen más abajo. Es el único servicio de IA de terceros que usamos.</p>
+    <p>Si las dos personas de la pareja aceptan las sugerencias con IA, ciertos datos del check-in se envían a <strong>Anthropic, PBC</strong> (la empresa que ofrece el servicio de IA Claude) con el único fin de generar sugerencias de apoyo para quien recibe el check-in y, en Listenly Plus, las reflexiones semanales que se describen más abajo. Es el único servicio de IA de terceros que usamos.</p>
 
     <p><strong>Qué datos se envían a Anthropic:</strong></p>
 
     <ul>
-      <li>El estado de ánimo del check-in (por ejemplo, «agradecido», «abrumado»)</li>
+      <li>El estado de ánimo del check-in (por ejemplo, «con gratitud», «con agobio»)</li>
       <li>Una breve descripción del estado de ánimo y su categoría (por ejemplo, «en calma y a gusto», «zona morada»)</li>
       <li>La nota de texto opcional del check-in, si la hay</li>
       <li>Una breve plantilla de instrucciones que da contexto a la solicitud</li>
@@ -148,7 +148,7 @@
 
     <p><strong>No</strong> enviamos a Anthropic tu correo electrónico, tu ID de cuenta, el ID de cuenta de tu pareja, tu ubicación, tu zona horaria, ningún nombre ni ningún otro dato que te identifique. Para las sugerencias tampoco enviamos tu historial de check-ins: solo se envía el check-in al que se responde (las reflexiones semanales funcionan distinto, como se explica más abajo). No se envía el nombre de quien recibe el check-in. Cada solicitud es independiente: Anthropic no sabe que forma parte de una relación entre dos personas concretas.</p>
 
-    <p><strong>Se necesita el consentimiento de ambos.</strong> La primera vez que llegas a las sugerencias con IA, ves una pantalla de consentimiento que nombra a Anthropic y explica qué se envía. La función depende del consentimiento de los dos: tu check-in se envía a Anthropic solo si tú (quien lo envía) y tu pareja (quien lo recibe) aceptaron. Si cualquiera de los dos no acepta, no se envía ningún dato. Puedes retirar tu consentimiento cuando quieras en Privacidad; a partir de ese momento no se enviarán más datos en tu nombre y dejarás de ver sugerencias de IA para los check-ins de tu pareja.</p>
+    <p><strong>Para las sugerencias se necesita el consentimiento de las dos personas.</strong> La primera vez que llegas a las sugerencias con IA, ves una pantalla de consentimiento que nombra a Anthropic y explica qué se envía. La función depende del consentimiento de las dos personas: tu check-in se envía a Anthropic solo si tú (quien lo envía) y tu pareja (quien lo recibe) aceptaron. Si una de las dos personas no acepta, no se envía ningún dato para las sugerencias. Puedes retirar tu consentimiento cuando quieras en Privacidad; a partir de ese momento no se enviarán más datos en tu nombre y dejarás de ver sugerencias de IA para los check-ins de tu pareja.</p>
 
     <p><strong>Reflexiones semanales (Listenly Plus).</strong> Listenly Plus incluye una reflexión escrita y breve sobre tu semana. Para escribirla, enviamos a Anthropic los check-ins de esa semana: la fecha, la etiqueta de ánimo y la nota de texto opcional de cada uno. La reflexión personal usa todos tus check-ins, incluidos los que mantuviste en privado frente a tu pareja. La reflexión de pareja usa únicamente los check-ins que compartieron entre ustedes; los check-ins privados nunca se incluyen. No enviamos tu correo electrónico, tu ID de cuenta ni tu nombre. Esto ocurre solo si activaste el consentimiento de IA (para la reflexión de pareja, deben haberlo activado las dos personas). Justo antes de cada solicitud, comprobamos de nuevo que el consentimiento de IA sigue activo, que la pareja sigue vinculada y que no hay una pausa; si algo de eso cambió, no se envía nada. Como la comprobación y la solicitud son pasos distintos, un cambio que hagas en el mismo instante en que sale una solicitud puede no surtir efecto hasta la siguiente; en ese caso la reflexión se descarta y nunca se guarda ni se muestra. El texto de la reflexión se guarda en tu cuenta hasta que elimines tu historial de check-ins o tu cuenta.</p>
 
@@ -188,7 +188,7 @@
 
     <h2>Eliminación de la cuenta</h2>
 
-    <p>Puedes eliminar de forma permanente tu cuenta y todos sus datos desde la app en <strong>tu avatar (arriba a la derecha) → Privacidad → Eliminar mi cuenta</strong>. Esto elimina tu cuenta, tu perfil, tus check-ins, tus reacciones, el vínculo con tu pareja y tu registro de consentimiento de IA. La eliminación es permanente y no se puede deshacer. Si ya no tienes la app, consulta <a href="/es/delete-account/">cómo eliminar tu cuenta</a>.</p>
+    <p>Puedes eliminar de forma permanente tu cuenta y todos sus datos desde la app en <strong>tu avatar (arriba a la derecha) → Ajustes → Privacidad → Eliminar mi cuenta</strong>. Esto elimina tu cuenta, tu perfil, tus check-ins, tus reacciones, el vínculo con tu pareja y tu registro de consentimiento de IA. La eliminación es permanente y no se puede deshacer. Si ya no tienes la app, consulta <a href="/es/delete-account/">cómo eliminar tu cuenta</a>.</p>
 
     <h2>Tus derechos</h2>
 
